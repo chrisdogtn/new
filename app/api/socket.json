@@ -1,0 +1,25 @@
+[
+  {
+    "name": "query",
+    "module": "dbconnector",
+    "action": "single",
+    "options": {},
+    "output": true,
+    "meta": []
+  },
+  {
+    "name": "emit",
+    "module": "sockets",
+    "action": "emit",
+    "options": {
+      "room": 100
+    }
+  },
+  {
+    "name": "rooms",
+    "module": "sockets",
+    "action": "allRooms",
+    "options": {},
+    "outputType": "array"
+  }
+]

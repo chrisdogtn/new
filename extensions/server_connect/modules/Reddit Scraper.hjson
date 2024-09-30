@@ -1,0 +1,57 @@
+{
+
+  type: 'RedditScraper_scrape',
+
+  module : 'Reddit Scraper',
+
+  action : 'scrape',
+
+  groupTitle : 'Scrapers',
+
+  groupIcon : 'fas fa-solid fa-question comp-data',
+
+  title : 'Reddit Scraper',
+
+  icon : 'fas fa-solid fa-question comp-data',
+
+  serverModel : ['node'],
+datePickObject: true,
+  properties : [
+
+    {
+
+      group: 'Module Inputs',
+      variables: [
+        { name: 'actionName', 
+        optionName: 'name', 
+        title: 'Name', 
+        type: 'text', 
+        required: true, 
+        defaultValue: '',
+        baseName: "rscraper"
+        }, {
+            name: 'mydata',
+            optionName: 'mydata',
+            title: 'Data Input',
+            type: 'text',
+            required: true,
+            defaultValue : '',
+            serverDataBindings: true,
+            help: 'Input some data'
+        },
+          { name: 'output', 
+          optionName: 'output', 
+          title: 'Output', 
+          type: 'object', 
+          defaultValue: false 
+          }
+
+      ]
+
+    },
+
+    
+
+  ]
+
+}

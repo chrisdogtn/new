@@ -1,0 +1,11 @@
+{
+  "meta": {
+    "$_PARAM": [
+      {
+        "type": "text",
+        "name": "message text"
+      }
+    ]
+  },
+  "exec": {}
+}

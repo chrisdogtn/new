@@ -1,0 +1,206 @@
+{
+  "type": "sqlite3",
+  "connection": {
+    "filename": "/db.sqlite3"
+  },
+  "direct": true,
+  "schema": {
+    "tables": {
+      "cars": {
+        "db": {},
+        "columns": {
+          "id": {
+            "db": {
+              "type": "increments",
+              "primary": true,
+              "unique": false,
+              "nullable": false
+            }
+          },
+          "make": {
+            "db": {
+              "type": "string",
+              "maxLength": 50,
+              "primary": false,
+              "unique": false,
+              "nullable": true
+            }
+          },
+          "model": {
+            "db": {
+              "type": "string",
+              "maxLength": 50,
+              "primary": false,
+              "unique": false,
+              "nullable": true
+            }
+          },
+          "year": {
+            "db": {
+              "type": "string",
+              "maxLength": 50,
+              "primary": false,
+              "unique": false,
+              "nullable": true
+            }
+          }
+        }
+      },
+      "countries": {
+        "db": {},
+        "columns": {
+          "id": {
+            "db": {
+              "type": "increments",
+              "primary": true,
+              "unique": false,
+              "nullable": false
+            }
+          },
+          "country_code": {
+            "db": {
+              "type": "string",
+              "maxLength": 2,
+              "primary": false,
+              "unique": false,
+              "nullable": false
+            }
+          },
+          "country_name": {
+            "db": {
+              "type": "string",
+              "maxLength": 100,
+              "primary": false,
+              "unique": false,
+              "nullable": false
+            }
+          }
+        }
+      },
+      "images": {
+        "db": {},
+        "columns": {
+          "id": {
+            "db": {
+              "type": "increments",
+              "primary": true,
+              "unique": false,
+              "nullable": false
+            }
+          },
+          "image": {
+            "db": {
+              "type": "string",
+              "maxLength": 50,
+              "primary": false,
+              "unique": false,
+              "nullable": true
+            }
+          },
+          "description": {
+            "db": {
+              "type": "text",
+              "primary": false,
+              "unique": false,
+              "nullable": true
+            }
+          },
+          "category": {
+            "db": {
+              "type": "string",
+              "maxLength": 12,
+              "primary": false,
+              "unique": false,
+              "nullable": true
+            }
+          },
+          "author": {
+            "db": {
+              "type": "string",
+              "maxLength": 50,
+              "primary": false,
+              "unique": false,
+              "nullable": true
+            }
+          },
+          "date": {
+            "db": {
+              "type": "date",
+              "primary": false,
+              "unique": false,
+              "nullable": true
+            }
+          }
+        }
+      },
+      "users": {
+        "columns": {
+          "id": {
+            "db": {
+              "type": "increments",
+              "primary": true,
+              "unique": false,
+              "nullable": false
+            }
+          },
+          "first_name": {
+            "db": {
+              "type": "string",
+              "maxLength": 50,
+              "primary": false,
+              "unique": false,
+              "nullable": true
+            }
+          },
+          "last_name": {
+            "db": {
+              "type": "string",
+              "maxLength": 50,
+              "primary": false,
+              "unique": false,
+              "nullable": true
+            }
+          },
+          "gender": {
+            "db": {
+              "type": "string",
+              "maxLength": 50,
+              "primary": false,
+              "unique": false,
+              "nullable": true
+            }
+          },
+          "email": {
+            "db": {
+              "type": "string",
+              "maxLength": 50,
+              "primary": false,
+              "unique": false,
+              "nullable": true
+            }
+          },
+          "company": {
+            "db": {
+              "type": "string",
+              "maxLength": 50,
+              "primary": false,
+              "unique": false,
+              "nullable": true
+            }
+          },
+          "avatar": {
+            "db": {
+              "type": "string",
+              "maxLength": 100,
+              "primary": false,
+              "unique": false,
+              "nullable": true
+            }
+          }
+        },
+        "db": {}
+      }
+    },
+    "views": {}
+  }
+}
